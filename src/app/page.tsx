@@ -4,10 +4,16 @@ import Link from 'next/link';
 import { Bot, FileText, AlertTriangle, Users } from 'lucide-react';
 import styles from './page.module.css';
 import ChatWindow from '@/components/chat/ChatWindow';
+import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
   const { t } = useLanguage();
+
+  // Force scroll to top on mount to override browser scroll restoration
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={styles.home}>
