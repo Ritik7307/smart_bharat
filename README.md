@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🇮🇳 Smart Bharat - Civic Companion
 
-## Getting Started
+**Smart Bharat** is an intelligent, AI-powered civic companion designed to simplify government services, streamline issue reporting, and provide personalized civic support for the citizens of India. 
 
-First, run the development server:
+Designed with the rigorous standards of an official Indian Government portal, this application prioritizes **accessibility, multi-lingual support, and user-centric design**.
 
+## 🌟 Features
+
+- **Multi-lingual Support**: Native support for English, Hindi, Bengali, Telugu, Marathi, and Tamil to ensure inclusivity across India's diverse linguistic landscape.
+- **Official Government Aesthetic**: Built with a formal design system (Navy Blue `#003366`, Tricolor accents, and `Roboto` typography) mirroring authentic government portals.
+- **Robust Accessibility**: 
+  - **Dual-Header Navigation** with integrated Language selection.
+  - **Text Sizing Controls** (`A-`, `A`, `A+`) to dynamically scale text.
+  - **High Contrast Mode** for visually impaired users.
+  - **Keyboard Navigation** including "Skip to Main Content".
+- **AI Integration**: A floating AI assistant ready to answer civic queries, draft complaints, and guide users through complex government service applications.
+- **Services Directory**: Easily find, understand, and apply for essential government services (PAN, Aadhar, Voter ID, etc.).
+- **Civic Issue Reporting**: A dedicated portal to log, track, and manage local civic complaints (e.g., broken street lights, water leakage) with AI-assisted drafting.
+
+## 🚀 Getting Started
+
+This is a [Next.js](https://nextjs.org) application bootstrapped with `create-next-app`.
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application running.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Custom CSS Modules (`globals.css` and `.module.css` files)
+- **Icons**: Lucide React
+- **Typography**: Google Fonts (Roboto)
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/src/app` - Core Next.js App Router pages (`page.tsx`, `layout.tsx`, `globals.css`)
+- `/src/components` - Reusable UI components (`Navbar`, `ChatWidget`, etc.)
+- `/src/contexts` - React Context providers (`LanguageContext` for i18n & state)
+- `/public` - Static assets and icons
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions to improve Smart Bharat are always welcome! Please follow standard pull request procedures and ensure all accessibility standards (WCAG) are maintained in your UI changes.
