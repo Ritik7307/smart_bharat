@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { Minus, Maximize2 } from 'lucide-react';
 import styles from './ChatWindow.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -76,11 +76,11 @@ export default function ChatWindow() {
     }
   };
 
-  const suggestions = [
+  const suggestions = useMemo(() => [
     t('sug1'),
     t('sug2'),
     t('sug3')
-  ];
+  ], [t]);
 
   return (
     <div className={styles.chatWindow} style={{ height: isMinimized ? 'auto' : '500px' }}>

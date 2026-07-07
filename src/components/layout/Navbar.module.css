@@ -32,12 +32,19 @@
 }
 
 .skipLink {
-  color: #FFFFFF;
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: var(--color-primary);
+  color: white;
   text-decoration: none;
 }
 
-.skipLink:hover {
-  text-decoration: underline;
+.skipLink:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
 }
 
 .divider {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { User, Globe, Search, X, BotMessageSquare } from 'lucide-react';
 import styles from './Navbar.module.css';
@@ -38,6 +39,10 @@ export default function Navbar() {
     else if (size === 'large') html.style.fontSize = '18px';
   };
 
+  const toggleHighContrast = () => {
+    document.documentElement.classList.toggle('high-contrast');
+  };
+
   return (
     <header className={styles.header}>
       {/* Tricolor Strip */}
@@ -47,11 +52,17 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarContent}`}>
           <div className={styles.topLinks}>
+            <a href="#main-content" className={styles.skipLink}>{t('skipToMain')}</a>
+            <span className={styles.divider}>|</span>
             <div className={styles.accessibility}>
               <button onClick={() => handleFontSize('small')} title="Decrease Text Size">A-</button>
               <button onClick={() => handleFontSize('normal')} title="Normal Text Size">A</button>
               <button onClick={() => handleFontSize('large')} title="Increase Text Size">A+</button>
             </div>
+            <span className={styles.divider}>|</span>
+            <button className={styles.themeToggle} onClick={toggleHighContrast}>
+              {t('highContrast')}
+            </button>
           </div>
           
           <div className={styles.topRight}>
@@ -87,7 +98,14 @@ export default function Navbar() {
       <div className={`container ${styles.navbarContent}`}>
         <div className={styles.logo}>
           <Link href="/">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Emblem of India" className={styles.logoIcon} />
+            <Image 
+              src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" 
+              alt="Emblem of India" 
+              width={40}
+              height={40}
+              className={styles.logoIcon} 
+              priority
+            />
             <span className={styles.logoText}>Smart Bharat</span>
           </Link>
         </div>
