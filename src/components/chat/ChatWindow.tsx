@@ -17,7 +17,7 @@ export default function ChatWindow() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatBodyRef = useRef<HTMLDivElement>(null);
 
   // Initialize greeting based on current language
   useEffect(() => {
@@ -33,7 +33,9 @@ export default function ChatWindow() {
   }, [language]);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -100,7 +102,7 @@ export default function ChatWindow() {
       
       {!isMinimized && (
         <>
-          <div className={styles.chatBody}>
+          <div className={styles.chatBody} ref={chatBodyRef}>
         <div className={styles.messagesContainer}>
           {messages.map((msg) => (
             <div key={msg.id} className={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
@@ -123,7 +125,6 @@ export default function ChatWindow() {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
         </div>
         
         {messages.length === 1 && (
